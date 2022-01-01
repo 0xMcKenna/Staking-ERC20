@@ -7,6 +7,7 @@ const hre = require("hardhat");
 
 async function main() {
 
+  // APEX Token Supply
   const initSupply = 1e12
   
   // Deploy Staking Token
