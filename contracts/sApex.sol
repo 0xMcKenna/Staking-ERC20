@@ -45,7 +45,7 @@ contract sApex is ERC20, Ownable {
         // Add to staking positions.
         stakingPositions[msg.sender] = stakingInfo({
             amount: _amount,
-            cooldown: COOLDOWN_PERIOD,
+            cooldown: block.timestamp + COOLDOWN_PERIOD,
             cooldownShare: 0
         });
         // Transfer APEX and mint sAPEX
