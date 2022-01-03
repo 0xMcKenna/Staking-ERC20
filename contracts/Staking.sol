@@ -52,4 +52,8 @@ contract Staking is Initializable {
         emit Stake(_amount, msg.sender);
     }
 
+    function cooldown(uint256 _amount) external {
+        
+    }
+
 }
