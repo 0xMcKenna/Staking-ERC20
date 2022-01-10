@@ -17,14 +17,18 @@ async function main() {
   await apex.deployed()
 
   console.log("Apex token deployed at: " + apex.address)
+
+  // Staking Cooldown
+  const cooldown = 604800
   
   // Deploy Staking Token
-  const sApex = await hre.ethers.getContractFactory("sApex")
-  const sapex = await sApex.deploy(apex.address)
+  const Staking = await hre.ethers.getContractFactory("Staking")
+  const staking = await Staking.deploy(apex.address, cooldown)
 
-  await sapex.deployed()
+  await staking.deployed()
 
-  console.log("sApex token deployed at: " + sapex.address)
+  console.log("Staking Contract deployed at: " + staking.address)
+
 }
 
 // We recommend this pattern to be able to use async/await everywhere
